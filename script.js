@@ -63,11 +63,13 @@ function game(){
         console.log( result +"\nplayer score: " + player + "\ncomputer score: " + computer); 
     }
 
-    if (player > result) { console.log("Human Wins");}
-    else if (player < result) { console.log("Computer wins!"); }
+    if (player > computer) { console.log("Human Wins");}
+    else if (player < computer) { console.log("Computer wins!"); }
     else { console.log("its a draw")};
 
 }
+
+let g = game();
 
 
 
