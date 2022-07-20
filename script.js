@@ -71,7 +71,7 @@ function game(){
 
 }
 
-let g = game();
+let temp = game();
 
 
 
