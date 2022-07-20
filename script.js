@@ -63,9 +63,11 @@ function game(){
         console.log( result +"\nplayer score: " + player + "\ncomputer score: " + computer); 
     }
 
+
+    //this can be a function
     if (player > computer) { console.log("Human Wins");}
     else if (player < computer) { console.log("Computer wins!"); }
-    else { console.log("its a draw")};
+    else { console.log("its a draw")}; //instant return instead of else statement
 
 }
 
