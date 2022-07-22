@@ -2,3 +2,47 @@ html, body {
   width: 100%;
   height: 100%;
 }
+
+
+.score-container {
+  display: flex;
+  justify-content: right;
+  margin: 50px;
+}
+
+.border-container {
+  display: flex;
+  gap: 10px;
+  border-radius: 20px;
+  border: solid 1px;
+}
+
+.player-container, .comp-container {
+  display: flex;
+  gap: 3px;
+  margin: 5px;
+}
+
+.player-container { color: #4B6788; }
+
+.comp-container { color: #C51F5D; } 
+
+.result-container {
+  text-align: center;
+  border: solid 1px;
+}
+
+[data-icon="carbon:game-console"] {
+  width: 200px;
+  height: 200px;
+}
+
+[data-icon^="fa"]{
+  width: 150px;
+  height: 150px;
+}
+
+.buttons-container{
+  justify-content: center;
+  display: flex;
+}

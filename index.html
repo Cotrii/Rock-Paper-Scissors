@@ -6,20 +6,45 @@
   <meta name="viewport" content="width=device-width">
   <title>Rock Paper Scissors</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
+
+  <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
 </head>
 
 <body>
+  <div class="score-container">
+    <div class="border-container">
+      <div class="player-container">
+        <div class="p-text">Player: </div>
+        <div class="player-score">0</div>
+      </div>
+      <div class="comp-container">
+        <div class="c-text">Computer: </div>
+        <div class="comp-score">0</div>
+      </div>
+    </div>
+
+  </div>
 
   <div class="result-container">
     <div class="result-text">
-        I'm inside a container
+        Rock Paper Scissors
     </div> 
-    <div class="player-score">0</div>
-    <div class="comp-score">0</div>
+    <div class="result-image">
+      <span class="iconify" data-icon="carbon:game-console"></span>
+    </div>
   </div>
-  <button class="choices" id="rock">Rock</button>
-  <button class="choices" id="paper">Paper</button>
-  <button class="choices" id="scissors">Scissors</button>
+
+  <div class="buttons-container">
+    <button class="choices" id="rock"> 
+      <span class="iconify" data-icon="fa-regular:hand-rock"></span>
+    </button>
+    <button class="choices" id="paper">
+      <span class="iconify" data-icon="fa-regular:hand-paper"></span>
+    </button>
+    <button class="choices" id="scissors">
+      <span class="iconify" data-icon="fa6-regular:hand-scissors"></span>
+    </button>
+  </div>
   <script src="script.js"></script>
 </body>
 

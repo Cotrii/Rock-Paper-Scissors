@@ -8,30 +8,41 @@ buttons.forEach((button) => {
         playRound(button.id, computerPlay()); //computerPlay needs to be changed
 
         //function start here
-        let pScoreText = document.querySelector(".player-score")
-        let cScoreText = document.querySelector(".comp-score").textContent;
+        let pScoreText = document.querySelector(".player-score");
+        let cScoreText = document.querySelector(".comp-score");
 
-        let textresult = document.querySelector(".result-text").textContent;
-
-        let temp = parseInt(pScoreText.textContent) + 1;
-
-        pScoreText.textContent = temp.toString();
+        let textResult = document.querySelector(".result-text").textContent;
 
 
-        
+        let temp;
 
-        // if (result.charAt(4) ==="W") { pScore }
-        //  else if (result.charAt(4) === "L") {computer++;}
+        if (textResult.charAt(4) ==="W") { 
+            temp = parseInt(pScoreText.textContent) + 1; 
+            pScoreText.textContent = temp.toString();
+        }
+        else if (textResult.charAt(4) === "L") {
+            temp = parseInt(cScoreText.textContent) + 1; 
+            cScoreText.textContent = temp.toString();
+        }
 
 
         if (pScoreText.textContent == "5" || cScoreText.textContent == "5") {
-            console.log("game is done");
+            alert("game is done");
+
+            disableButtons();
 
         }
 
         //new function end here
     });
 } );
+
+
+function disableButtons() {
+    buttons.forEach((button) => {
+        button.disabled = true;
+    });
+}
 
 // computerPlay() - returns 0-2 (R,P,S) using floor
 function computerPlay(){
