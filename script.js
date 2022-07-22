@@ -5,7 +5,20 @@ buttons.forEach((button) => {
 
         console.log("hello");
 
-        console.log(playRound(button.id, computerPlay() )); //computerPlay needs to be changed
+        playRound(button.id, computerPlay()); //computerPlay needs to be changed
+
+        //function start here
+        let pScore = document.querySelector(".player-score").textContent;
+        let cScore = document.querySelector(".comp-score").textContent;
+
+        console.log(pScore);
+
+        if (pScore == "5" || cScore == "5") {
+            console.log("game is done");
+
+        }
+
+        //new function end here
     });
 } );
 
@@ -20,26 +33,28 @@ function computerPlay(){
 // playRound(playerSelection, computerSelection) - returns string of result
 function playRound(playerSelection, computerSelection){
 
+    let result = document.querySelector(".result-text"); //querySelector is faster than getElement
+
     if (playerSelection === computerSelection){
-        return "Draw";
+        result.textContent = "Draw";
     }
     else if (playerSelection === "paper"){
         if (computerSelection === "rock") 
-            return "You Win! Paper beats Rock";
+            result.textContent =  "You Win! Paper beats Rock";
         else if (computerSelection === "scissors")
-            return "You Lose! Scissors beats Rock";
+            result.textContent =  "You Lose! Scissors beats Rock";
     }
     else if (playerSelection === "scissors"){
         if (computerSelection === "paper") 
-            return "You Win! Scissors beats Paper";
+            result.textContent =  "You Win! Scissors beats Paper";
         else if (computerSelection === "rock")
-            return "You Lose! Rock beats Scissors";
+            result.textContent =  "You Lose! Rock beats Scissors";
     }
     else if (playerSelection === "rock"){
         if (computerSelection === "scissors") 
-            return "You Win! Rock Beats Scissors";
+            result.textContent =  "You Win! Rock Beats Scissors";
         else if (computerSelection === "paper")
-            return "You Lose! Paper Beats Rock";
+            result.textContent =  "You Lose! Paper Beats Rock";
     }
     
     
