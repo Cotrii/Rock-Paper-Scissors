@@ -8,12 +8,23 @@ buttons.forEach((button) => {
         playRound(button.id, computerPlay()); //computerPlay needs to be changed
 
         //function start here
-        let pScore = document.querySelector(".player-score").textContent;
-        let cScore = document.querySelector(".comp-score").textContent;
+        let pScoreText = document.querySelector(".player-score")
+        let cScoreText = document.querySelector(".comp-score").textContent;
 
-        console.log(pScore);
+        let textresult = document.querySelector(".result-text").textContent;
 
-        if (pScore == "5" || cScore == "5") {
+        let temp = parseInt(pScoreText.textContent) + 1;
+
+        pScoreText.textContent = temp.toString();
+
+
+        
+
+        // if (result.charAt(4) ==="W") { pScore }
+        //  else if (result.charAt(4) === "L") {computer++;}
+
+
+        if (pScoreText.textContent == "5" || cScoreText.textContent == "5") {
             console.log("game is done");
 
         }
