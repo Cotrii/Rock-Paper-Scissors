@@ -1,6 +1,20 @@
+let buttons = document.querySelectorAll(".choices");
+
+buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+
+        console.log("hello");
+
+        console.log(playRound(button.id, computerPlay() )); //computerPlay needs to be changed
+    });
+} );
+
 // computerPlay() - returns 0-2 (R,P,S) using floor
 function computerPlay(){
-    return Math.floor(Math.random() * 3);
+
+    const choices = ["rock", "paper", "scissors"];
+
+    return choices[Math.floor(Math.random() * 3)];
 }
 
 // playRound(playerSelection, computerSelection) - returns string of result
@@ -35,8 +49,6 @@ function playRound(playerSelection, computerSelection){
 // keeps score
 function game(){
 
-    const choices = ["rock", "paper", "scissors"];
-
     let player = 0;
     let computer = 0;
 
@@ -44,30 +56,30 @@ function game(){
     let computerSelection = null;
     let result = null;
 
-    for (let i = 0; i < 5; i++){
+    // for (let i = 0; i < 5; i++){
 
-        playerSelection = "empty";
+    //     playerSelection = "empty";
 
-        while ( !(playerSelection === "rock" || playerSelection === "scissors" 
-                || playerSelection === "paper") )    {
-            let input = prompt("Enter input");
-            playerSelection = input.toLowerCase();
-        }
+    //     while ( !(playerSelection === "rock" || playerSelection === "scissors" 
+    //             || playerSelection === "paper") )    {
+    //         let input = prompt("Enter input");
+    //         playerSelection = input.toLowerCase();
+    //     }
 
-        computerSelection = choices[computerPlay()];
-        result = playRound(playerSelection, computerSelection);
+    //     computerSelection = choices[computerPlay()];
+    //     result = playRound(playerSelection, computerSelection);
 
-        if (result.charAt(4) ==="W") {player++; }
-        else if (result.charAt(4) === "L") {computer++;}
+    //     if (result.charAt(4) ==="W") {player++; }
+    //     else if (result.charAt(4) === "L") {computer++;}
 
-        console.log( result +"\nplayer score: " + player + "\ncomputer score: " + computer); 
-    }
+    //     console.log( result +"\nplayer score: " + player + "\ncomputer score: " + computer); 
+    // }
 
 
-    //this can be a function
-    if (player > computer) { console.log("Human Wins");}
-    else if (player < computer) { console.log("Computer wins!"); }
-    else { console.log("its a draw")}; //instant return instead of else statement
+    // //this can be a function
+    // if (player > computer) { console.log("Human Wins");}
+    // else if (player < computer) { console.log("Computer wins!"); }
+    // else { console.log("its a draw")}; //instant return instead of else statement
 
 }
 
