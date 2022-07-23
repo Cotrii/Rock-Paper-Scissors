@@ -40,7 +40,12 @@ html, body {
 
 .result-container {
   text-align: center;
-  border: solid 1px;
+  /* border: solid 1px; */
+}
+
+[data-icon^="bi"]{
+  width: 200px;
+  height: 200px;
 }
 
 [data-icon="carbon:game-console"] {
@@ -65,8 +70,8 @@ html, body {
   border: 1px solid;
   margin: 20px;
 
-  width: 300px;
-  height: 300px;
+  width: 250px;
+  height: 250px;
 }
 
 .result-text {

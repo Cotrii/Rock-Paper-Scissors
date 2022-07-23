@@ -19,10 +19,17 @@ buttons.forEach((button) => {
         if (textResult.charAt(4) ==="W") { 
             temp = parseInt(pScoreText.textContent) + 1; 
             pScoreText.textContent = temp.toString();
+
+            let curr = document.querySelector(".iconify");
+            curr.setAttribute("data-icon", "bi:emoji-laughing");
+            
         }
         else if (textResult.charAt(4) === "L") {
             temp = parseInt(cScoreText.textContent) + 1; 
             cScoreText.textContent = temp.toString();
+
+            let curr = document.querySelector(".iconify");
+            curr.setAttribute("data-icon", "bi:emoji-neutral");
         }
 
 
