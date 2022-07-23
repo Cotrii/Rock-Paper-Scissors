@@ -64,8 +64,9 @@ html, body {
 .buttons-container{
   justify-content: center;
   display: flex;
-
-  justify-content: space-evenly;
+  
+  gap: 50px;
+  /* justify-content: space-evenly; */
 }
 
 .choices {
