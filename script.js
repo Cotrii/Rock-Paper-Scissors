@@ -36,10 +36,23 @@ buttons.forEach((button) => {
 
             let result = document.querySelector(".result-container");
 
+            let curr = document.querySelector(".iconify");
+            
+
             const elem = document.createElement("span");
 
-            if (pScoreText.textContent == "5") { elem.textContent = "Human Wins";}
-            else { elem.textContent = "Computer wins!"; }
+            elem.style.fontSize = "36px";
+
+            if (pScoreText.textContent == "5") { 
+                elem.textContent = "Human wins!";
+                curr.setAttribute("data-icon", "bi:emoji-laughing");
+                elem.style.color = "#4B6788";
+            }
+            else { 
+                elem.textContent = "Computer wins!"; 
+                curr.setAttribute("data-icon", "bi:emoji-neutral");
+                elem.style.color = "#C51F5D";
+            }
 
             result.appendChild(elem);
 
