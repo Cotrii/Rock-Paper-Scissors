@@ -32,7 +32,7 @@ buttons.forEach((button) => {
 
 
         if (pScoreText.textContent == "5" || cScoreText.textContent == "5") {
-            alert("game is done");
+            // alert("game is done");
 
             let result = document.querySelector(".result-container");
 
