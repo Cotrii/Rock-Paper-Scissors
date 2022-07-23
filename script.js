@@ -51,7 +51,10 @@ buttons.forEach((button) => {
 
 function disableButtons() {
     buttons.forEach((button) => {
-        button.disabled = true;
+
+        if (button instanceof HTMLButtonElement){
+            button.disabled = true;
+        }
     });
 }
 
