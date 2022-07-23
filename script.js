@@ -29,6 +29,17 @@ buttons.forEach((button) => {
         if (pScoreText.textContent == "5" || cScoreText.textContent == "5") {
             alert("game is done");
 
+            let result = document.querySelector(".result-container");
+
+            const elem = document.createElement("span");
+
+            if (pScoreText.textContent == "5") { elem.textContent = "Human Wins";}
+            else { elem.textContent = "Computer wins!"; }
+
+            result.appendChild(elem);
+
+            //change image to win/lose 
+
             disableButtons();
 
         }
