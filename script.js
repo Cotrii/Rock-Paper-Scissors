@@ -3,8 +3,6 @@ let buttons = document.querySelectorAll(".choices");
 buttons.forEach((button) => {
     button.addEventListener("click", () => {
 
-        console.log("hello");
-
         playRound(button.id, computerPlay()); //computerPlay needs to be changed
 
         //function start here

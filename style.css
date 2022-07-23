@@ -81,3 +81,7 @@ html, body {
 .p-text, .c-text, .player-score, .comp-score {
   font-size: 36px;
 }
+
+.result-image {
+  margin: 20px;
+}
