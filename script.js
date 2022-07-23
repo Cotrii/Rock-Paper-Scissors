@@ -3,9 +3,12 @@ let buttons = document.querySelectorAll(".choices");
 buttons.forEach((button) => {
     button.addEventListener("click", () => {
 
-        playRound(button.id, computerPlay()); //computerPlay needs to be changed
+        playRound(button.id, computerPlay());
+        changeHTMLcontent();
+    });
+} );
 
-        //function start here
+function changeHTMLcontent(){
         let pScoreText = document.querySelector(".player-score");
         let cScoreText = document.querySelector(".comp-score");
 
@@ -32,13 +35,8 @@ buttons.forEach((button) => {
 
 
         if (pScoreText.textContent == "5" || cScoreText.textContent == "5") {
-            // alert("game is done");
-
             let result = document.querySelector(".result-container");
-
             let curr = document.querySelector(".iconify");
-            
-
             const elem = document.createElement("span");
 
             elem.style.fontSize = "36px";
@@ -55,17 +53,11 @@ buttons.forEach((button) => {
             }
 
             result.appendChild(elem);
-
-            //change image to win/lose 
-
             disableButtons();
 
         }
 
-        //new function end here
-    });
-} );
-
+}
 
 function disableButtons() {
     buttons.forEach((button) => {
@@ -76,7 +68,7 @@ function disableButtons() {
     });
 }
 
-// computerPlay() - returns 0-2 (R,P,S) using floor
+// computerPlay() - returns choices based on numbers 0-2 (R,P,S) using floor
 function computerPlay(){
 
     const choices = ["rock", "paper", "scissors"];
@@ -84,7 +76,7 @@ function computerPlay(){
     return choices[Math.floor(Math.random() * 3)];
 }
 
-// playRound(playerSelection, computerSelection) - returns string of result
+// playRound(playerSelection, computerSelection) - changes textContent based on result
 function playRound(playerSelection, computerSelection){
 
     let result = document.querySelector(".result-text"); //querySelector is faster than getElement
@@ -110,49 +102,45 @@ function playRound(playerSelection, computerSelection){
         else if (computerSelection === "paper")
             result.textContent =  "You Lose! Paper Beats Rock";
     }
-    
-    
+     
 }
 
-//game () - 5 round game and report the winner and loser
-// keeps score
-function game(){
+// code for console only RPS!!!
+// //game () - 5 round game and report the winner and loser
+// // keeps score
+// function game(){
 
-    let player = 0;
-    let computer = 0;
+//     let player = 0;
+//     let computer = 0;
 
-    let playerSelection = "wat";
-    let computerSelection = null;
-    let result = null;
-
-    // for (let i = 0; i < 5; i++){
-
-    //     playerSelection = "empty";
-
-    //     while ( !(playerSelection === "rock" || playerSelection === "scissors" 
-    //             || playerSelection === "paper") )    {
-    //         let input = prompt("Enter input");
-    //         playerSelection = input.toLowerCase();
-    //     }
-
-    //     computerSelection = choices[computerPlay()];
-    //     result = playRound(playerSelection, computerSelection);
-
-    //     if (result.charAt(4) ==="W") {player++; }
-    //     else if (result.charAt(4) === "L") {computer++;}
-
-    //     console.log( result +"\nplayer score: " + player + "\ncomputer score: " + computer); 
-    // }
+//     let playerSelection = "wat";
+//     let computerSelection = null;
+//     let result = null;
 
 
-    // //this can be a function
-    // if (player > computer) { console.log("Human Wins");}
-    // else if (player < computer) { console.log("Computer wins!"); }
-    // else { console.log("its a draw")}; //instant return instead of else statement
+//     // code for console only RPS!!!
 
-}
+//     // for (let i = 0; i < 5; i++){
+//     //     playerSelection = "empty";
+//     //     while ( !(playerSelection === "rock" || playerSelection === "scissors" 
+//     //             || playerSelection === "paper") )    {
+//     //         let input = prompt("Enter input");
+//     //         playerSelection = input.toLowerCase();
+//     //     }
+//     //     computerSelection = choices[computerPlay()];
+//     //     result = playRound(playerSelection, computerSelection);
+//     //     if (result.charAt(4) ==="W") {player++; }
+//     //     else if (result.charAt(4) === "L") {computer++;}
+//     //     console.log( result +"\nplayer score: " + player + "\ncomputer score: " + computer); 
+//     // }
+//     // //this can be a function
+//     // if (player > computer) { console.log("Human Wins");}
+//     // else if (player < computer) { console.log("Computer wins!"); }
+//     // else { console.log("its a draw")}; //instant return instead of else statement
 
-let g = game();
+// }
+
+// let g = game();
 
 
 
